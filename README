@@ -1,0 +1,67 @@
+minimal arch linux desktop dotfiles
+
+this repository contains a direct hyprland setup with kitty, zsh, waybar,
+rofi, dunst, and optional desktop helpers.
+
+quick setup
+
+    git clone <repository-url> ~/Dev/dotfiles
+    cd ~/Dev/dotfiles
+    ./install.sh --dry-run
+    ./install.sh
+
+the installer:
+
+    shows required and optional package groups
+    asks before running pacman
+    backs up conflicting files
+    creates symlinks into xdg config paths
+    creates a local monitor override
+    verifies files before reloading hyprland
+
+package groups
+
+    core
+        hyprland kitty zsh uwsm fzf eza
+    desktop
+        waybar rofi dunst
+    optional/bluetooth
+        blueman network-manager-applet
+    optional/clipboard
+        wl-clipboard cliphist
+    optional/power
+        wlogout
+    optional/screenshots
+        grim slurp satty
+
+repository layout
+
+    config/    xdg configuration files
+    bin/       executable helper scripts
+    packages/  pacman package groups
+    local/     machine-specific examples
+    scripts/   installer, linker, verifier, and restore commands
+
+machine-specific monitor settings
+
+copy local/hypr/local.conf.example to ~/.config/hypr/local.conf and add
+monitor rules for the machine. this file is never symlinked or tracked.
+
+updates
+
+    cd ~/Dev/dotfiles
+    git pull
+    ./scripts/verify.sh repository
+    ./install.sh
+
+rollback
+
+backups are stored under:
+
+    ~/.local/state/dotfiles/backups/
+
+restore a backup with:
+
+    ./scripts/restore.sh ~/.local/state/dotfiles/backups/<timestamp>
+
+the installer does not log out, reboot, or stop unrelated processes.
