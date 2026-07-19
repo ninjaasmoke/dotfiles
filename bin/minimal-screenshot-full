@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+pictures=$(xdg-user-dir PICTURES)
+[[ -n "$pictures" ]] || pictures="$HOME/Pictures"
+mkdir -p "$pictures/Screenshots"
+
+grim - | satty \
+    --filename - \
+    --output-filename "$pictures/Screenshots/screenshot-%Y%m%d-%H%M%S.png" \
+    --copy-command wl-copy \
+    --app-id satty \
+    --no-window-decoration

@@ -1,0 +1,41 @@
+* {
+    background-image: none;
+    box-shadow: none;
+    font-family: sans;
+    font-size: 16px;
+}
+
+window {
+    background-color: #000000;
+}
+
+button {
+    color: #e8e8e8;
+    background-color: #000000;
+    border: 1px solid #42474d;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22%;
+}
+
+button:focus,
+button:active,
+button:hover {
+    color: #ffffff;
+    background-color: #181818;
+    border-color: #d8dadd;
+    outline-style: none;
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}

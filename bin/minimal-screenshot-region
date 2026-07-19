@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+geometry=$(slurp -b 00000088 -c d8daddff -s 30343aaa -w 1) || exit 0
+[[ -n "$geometry" ]] || exit 0
+
+pictures=$(xdg-user-dir PICTURES)
+[[ -n "$pictures" ]] || pictures="$HOME/Pictures"
+mkdir -p "$pictures/Screenshots"
+
+grim -g "$geometry" - | satty \
+    --filename - \
+    --output-filename "$pictures/Screenshots/screenshot-%Y%m%d-%H%M%S.png" \
+    --copy-command wl-copy \
+    --app-id satty \
+    --no-window-decoration

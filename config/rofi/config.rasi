@@ -1,0 +1,91 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+    terminal: "kitty";
+    font: "sans 11";
+}
+
+* {
+    background: #000000ff;
+    surface: #000000ff;
+    selected: #24272bff;
+    border: #42474dff;
+    foreground: #e8e8e8ff;
+    muted: #8b9096ff;
+}
+
+window {
+    width: 36%;
+    border: 1px;
+    border-color: @border;
+    border-radius: 6px;
+    background-color: @background;
+}
+
+mainbox {
+    padding: 12px;
+    spacing: 10px;
+    background-color: transparent;
+}
+
+inputbar {
+    padding: 9px 10px;
+    spacing: 8px;
+    border: 0;
+    background-color: @surface;
+    text-color: @foreground;
+}
+
+prompt,
+textbox-prompt-colon {
+    enabled: false;
+}
+
+entry {
+    placeholder: "Search";
+    placeholder-color: @muted;
+    text-color: @foreground;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    spacing: 4px;
+    background-color: transparent;
+}
+
+element {
+    padding: 8px 10px;
+    spacing: 10px;
+    border-radius: 4px;
+}
+
+element normal.normal,
+element alternate.normal,
+element normal.active,
+element alternate.active,
+element normal.urgent,
+element alternate.urgent {
+    background-color: @background;
+    text-color: @muted;
+}
+
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: @selected;
+    text-color: @foreground;
+}
+
+element-icon {
+    size: 20px;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+}
