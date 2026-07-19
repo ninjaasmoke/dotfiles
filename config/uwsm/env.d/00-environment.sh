@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+PATH="$HOME/.local/bin:$PATH"
+LESSHISTFILE="${LESSHISTFILE:-/tmp/less-hist}"
+PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
+SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+
+export PATH LESSHISTFILE PARALLEL_HOME SCREENRC
