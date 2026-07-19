@@ -18,7 +18,7 @@ compinit -d "$ZDOTDIR/.zcompdump"
 [[ -r "$ZDOTDIR/functions/eza.zsh" ]] && source "$ZDOTDIR/functions/eza.zsh"
 [[ -r "$ZDOTDIR/functions/fzf.zsh" ]] && source "$ZDOTDIR/functions/fzf.zsh"
 
-alias c='clear'
+alias c='clear && printf "\033[3J"'
 
 typeset -g ZSH_AUTOSUGGEST_STRATEGY=(history)
 typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#6f737a'
