@@ -1,0 +1,6 @@
+hyprland
+kitty
+zsh
+uwsm
+fzf
+eza
