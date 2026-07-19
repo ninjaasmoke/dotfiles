@@ -7,3 +7,6 @@
 backups/
 cache/
 state/
+
+# Local docs
+docs/
